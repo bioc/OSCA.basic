@@ -251,7 +251,7 @@ It would be courageous to use the distances between islands (seen to be measured
 
 On a related note, we prefer to restrict the $t$-SNE/UMAP coordinates for visualization and use the higher-rank representation for any quantitative analyses.
 To illustrate, consider the interaction between clustering and $t$-SNE.
-We do not perform clustering on the $t$-SNE coordinates, but rather, we cluster on the first 10-50 PCs (Chapter \ref(clustering)) and then visualize the cluster identities on $t$-SNE plots like that in Figure \@ref(fig:tsne-brain). 
+We do not perform clustering on the $t$-SNE coordinates, but rather, we cluster on the first 10-50 PCs (Chapter \@ref(clustering)) and then visualize the cluster identities on $t$-SNE plots like that in Figure \@ref(fig:tsne-brain). 
 This ensures that clustering makes use of the information that was lost during compression into two dimensions for visualization.
 The plot can then be used for a diagnostic inspection of the clustering output, e.g., to check which clusters are close neighbors or whether a cluster can be split into further subclusters; this follows the aforementioned theme of focusing on local structure.
 
