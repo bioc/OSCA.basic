@@ -1,6 +1,6 @@
 Package: OSCA.basic
 Title: Single-Cell Analysis Basics
-Version: 1.14.0
+Version: 1.15.0
 Date: 2024-06-28
 Authors@R: c( 
         person('Robert', 'Amezquita', role = 'aut'), 
