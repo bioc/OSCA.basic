@@ -390,7 +390,7 @@ tab <- select(org.Mm.eg.db, keytype="SYMBOL", keys=rownames(sce.mam), columns="G
 by.go <- split(tab[,1], tab[,2])
 
 # Identify genes associated with an interesting term.
-interesting <- unique(by.go[["GO:0019432"]])
+interesting <- unique(by.go[["GO:0006641"]])
 interesting.markers <- cur.markers[rownames(cur.markers) %in% interesting,]
 head(interesting.markers[order(-interesting.markers$median.logFC.cohen),1:4], 10)
 ```
@@ -415,14 +415,14 @@ aggregated[1:10,1:5]
 ```
 
 We can then identify "differential gene set activity" between clusters by looking for significant differences in the per-set averages of the relevant cells.
-For example, we observe that cluster `r chosen.text` has the highest average expression for the triacylglycerol biosynthesis GO term (Figure \@ref(fig:lipid-synth-violin)), consistent with the proposed identity of those cells.
+For example, we observe that cluster `r chosen.text` has the highest average expression for the triacylglycerol metabolic process GO term (Figure \@ref(fig:lipid-synth-violin)), consistent with the proposed identity of those cells.
 
-```{r lipid-synth-violin, fig.cap="Distribution of average log-normalized expression for genes involved in triacylglycerol biosynthesis, for all cells in each cluster of the mammary gland dataset."}
-plotColData(sce.mam, y=I(aggregated["GO:0019432",]), x="label")
+```{r lipid-synth-violin, fig.cap="Distribution of average log-normalized expression for genes involved in triacylglycerol metabolic process, for all cells in each cluster of the mammary gland dataset."}
+plotColData(sce.mam, y=I(aggregated["GO:0006641",]), x="label")
 ```
 
 ```{r, echo=FALSE}
-maxed <- vapply(split(aggregated["GO:0019432",], colLabels(sce.mam)), mean, 0)
+maxed <- vapply(split(aggregated["GO:0006641",], colLabels(sce.mam)), median, 0)
 stopifnot(identical(names(maxed)[which.max(maxed)], '2'))
 ```
 
@@ -431,13 +431,13 @@ Non-DE genes will add noise to the per-set average, "diluting" the strength of a
 At worst, a gene set may contain subsets of DE genes that change in opposite directions, cancelling out any differences in the per-set average.
 This is not uncommon for gene sets that contain both positive and negative regulators of a particular biological process or pathway.
 
-```{r thrsp-violin, fig.cap="Distribution of log-normalized expression values for _Thrsp_ across all cells in each cluster of the mammary gland dataset."}
-# Choose the top-ranking gene in GO:0019432.
-plotExpression(sce.mam, "Thrsp", x="label")
+```{r dbi-violin, fig.cap="Distribution of log-normalized expression values for _Dbi_ across all cells in each cluster of the mammary gland dataset."}
+# Choose the top-ranking gene in GO:0006641
+plotExpression(sce.mam, "Dbi", x="label")
 ```
 
 ```{r, echo=FALSE}
-maxed <- vapply(split(logcounts(sce.mam)["Thrsp",], colLabels(sce.mam)), median, 0)
+maxed <- vapply(split(logcounts(sce.mam)["Dbi",], colLabels(sce.mam)), median, 0)
 stopifnot(identical(names(maxed)[which.max(maxed)], '2'))
 ```
 
