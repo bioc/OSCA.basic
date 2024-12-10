@@ -69,6 +69,7 @@ The `subsets_Mito_percent` column contains the percentage of reads mapped to mit
 Finally, the `altexps_ERCC_percent` column contains the percentage of reads mapped to ERCC transcripts.
 
 ```{r}
+library(SingleCellExperiment)
 # Identifying the mitochondrial transcripts in our SingleCellExperiment.
 location <- rowRanges(sce.416b)
 is.mito <- any(seqnames(location)=="MT")
