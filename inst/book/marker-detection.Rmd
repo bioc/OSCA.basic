@@ -266,7 +266,7 @@ To favor the detection of such genes, we can compute the effect sizes relative t
 The definition of Cohen's $d$ is generalized to the standardized difference between the observed log-fold change and the specified `lfc` threshold.
 Similarly, the AUC is redefined as the probability of randomly picking an expression value from one cluster that is greater than a random value from the other cluster plus `lfc`.
 A large positive Cohen's $d$ and an AUC above 0.5 can only be obtained if the observed log-fold change between clusters is significantly greater than `lfc`.
-We demonstrate below by obtaining the top markers for cluster 6 in the PBMC dataset with `lfc=2` (Figure \@ref(fig:pbmc-markers-5-lfc)).
+We demonstrate below by obtaining the top markers for cluster 6 in the PBMC dataset with `lfc=2` (Figure \@ref(fig:pbmc-markers-6-lfc)).
 
 ```{r pbmc-markers-6-lfc, fig.height=6, fig.width=6, fig.cap="Dot plot of the top potential marker genes (as determined by the mean AUC) for cluster 6 in the PBMC dataset. Each row corrresponds to a marker gene and each column corresponds to a cluster. The size of each dot represents the proportion of cells with detected expression of the gene in the cluster, while the color is proportional to the average expression across all cells in that cluster."}
 marker.info.lfc <- scoreMarkers(sce.pbmc, colLabels(sce.pbmc), lfc=2)
