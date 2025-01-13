@@ -229,7 +229,7 @@ This allows us to easily characterize subtle differences between closely related
 To illustrate, we use the smallest rank from `computeMinRank()` to identify the top DE genes in cluster `r target` compared to the other _LYZ_-high clusters (Figure \@ref(fig:pbmc-grouped-ranked-heat2)). 
 
 ```{r pbmc-grouped-ranked-heat2, fig.cap=sprintf("Heatmap of the centered average log-expression values for the top potential marker genes for cluster %s relative to other _LYZ_-high clusters in the PBMC dataset. The set of markers was selected as those genes with AUC-derived min-ranks less than or equal to 10.", target)}
-lyz.high <- c("2", "4", "7", "12") # based on inspection of the previous Figure.
+lyz.high <- c("4", "5", "7", "12") # based on inspection of the previous Figure.
 subset <- chosen$full.AUC[,colnames(chosen$full.AUC) %in% lyz.high]
 to.show <- subset[computeMinRank(subset) <= 10,]
 to.show
