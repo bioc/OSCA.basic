@@ -89,6 +89,7 @@ Interestingly, our clustering does not effectively distinguish between CD4^+^ an
 This is probably due to the presence of other factors of heterogeneity within the T cell subpopulation (e.g., activation) that have a stronger influence on unsupervised methods than the _a priori_ expected CD4^+^/CD8^+^ distinction.
 
 ```{r singler-cluster, fig.cap="Heatmap of the distribution of cells across labels and clusters in the 10X PBMC dataset. Color scale is reported in the log~10~-number of cells for each cluster-label combination."}
+library(SingleCellExperiment)
 tab <- table(Assigned=pred$pruned.labels, Cluster=colLabels(sce.pbmc))
 
 # Adding a pseudo-count of 10 to avoid strong color jumps with just 1 cell.
