@@ -247,7 +247,7 @@ for (i in lyz.high) {
 
 Similarly, we can use the full set of effect sizes to define our own summary statistic if the precomputed measures are too coarse.
 For example, we may be interested in markers that are upregulated against some percentage - say, 80% - of other clusters.
-This improves the cluster specificity of the ranking by being more stringent than the median yet not as strigent as the minimum.
+This improves the cluster specificity of the ranking by being more stringent than the median yet not as stringent as the minimum.
 We achieve this by computing and sorting on the 20^th^ percentile of effect sizes, as shown below.
 
 ```{r}
