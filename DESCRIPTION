@@ -10,48 +10,13 @@ Authors@R: c(
         person('Peter', 'Hickey', role = 'cre', email="peter.hickey@gmail.com")
     )
 Description: 
-    Deploys basic analysis chapters for the "Orchestrating Single Cell Analysis with Bioconductor" book.
-    This describes the steps of a simple single-cell RNA-seq analysis, involving quality control,
-    normalization, various forms of dimensionality reduction, clustering into subpopulations, 
-    detection of marker genes, and annotation of cell types. It is intended for users who already
-    have some familiarity with R and want to get hands-on with some basic single-cell analyses.
-Depends: AnnotationHub,
-    apcluster,
-    AUCell,
-    BiocFileCache,
-    BiocSingular,
-    bluster,
-    celldex,
-    cluster,
-    dendextend,
-    dynamicTreeCut,
-    GO.db,
-    gridExtra,
-    GSEABase,
-    igraph,
-    limma,
-    mbkmeans,
-    org.Mm.eg.db,
-    pheatmap,
-    rebook,
-    rmarkdown,
-    RMTstat,
-    robustbase,
-    Rtsne,
-    scater,
-    scran,
-    scrapper,
-    scRNAseq,
-    scuttle,
-    SingleR,
-    statmod,
-    viridis
-Imports: 
-    OSCA.workflows
-Suggests: 
-    rmarkdown,
+    Most of the content in this book has been migrated to scrapbook (https://bioconductor.org/books/release/scrapbook).
+    This book is only retained to provide redirections to the relevant scrapbook chapters.
+Depends: scrapbook
+Suggest:
     knitr,
-    OSCA.advanced
+    rmarkdown,
+    BiocStyle
 VignetteBuilder: knitr
 License: CC BY 4.0
 URL: https://github.com/OSCA-source/OSCA.basic
